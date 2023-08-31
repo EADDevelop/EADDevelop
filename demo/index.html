@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script>
+        const addTrack_ev = new Event('addTrack', {bubbles: true, cancelable: true});
+        //登录
+        window.addEventListener("addTrack", function (e) {
+            try {
+                console.log('======== ok ========')
+                window.jsLink?.addTrack('track', '{"event1": "evemt_1","event2": "evemt_2", "event3": "evemt_3", "event4": "evemt_4", "event5": "evemt_5"}');
+            } catch (e) {
+                console.log('ERROR:' + e)
+            }
+        });
+    </script>
+</head>
+<body style="margin: 30px">
+更新日期：2023.
+<br/>
+<br/>
+<br/>
+<div>
+
+    <button type="button" onclick="this.dispatchEvent(addTrack_ev);">addTrack</button>
+    <br/>
+    <pre>
+    window.jsLink?.addTrack('track','{
+        "event1": "evemt_1",
+        "event2": "evemt_2",
+        "event3": "evemt_3",
+        "event4": "evemt_4",
+        "event5": "evemt_5"
+    }');
+    </pre>
+
+</div>
+</body>
+</html>
